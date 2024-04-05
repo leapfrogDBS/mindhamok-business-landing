@@ -1,0 +1,58 @@
+html {
+    @apply bg-space-cadet overflow-x-hidden;
+}
+
+@font-face {
+    font-family: 'Sailec';
+    src: url('assets/fonts/Sailec-Regular.woff') format('woff');
+    font-weight: 400; /* Normal weight */
+}
+
+@font-face {
+    font-family: 'Sailec';
+    src: url('assets/fonts/Sailec-Medium.woff') format('woff');
+    font-weight: 500; /* Medium weight */
+}
+
+@font-face {
+    font-family: 'Sailec';
+    src: url('assets/fonts/Sailec-Bold.woff') format('woff');
+    font-weight: 700; /* Bold weight */
+}
+
+.container {
+    max-width: 1400px;
+    @apply max-w-none py-12 md:py-20;
+}
+
+.heading-one {
+    font-size: clamp(1.5rem, 2vw + 1.5rem, 3rem);
+    @apply font-bold tracking-[-0.96px] leading-[1.2] text-ghost-white;
+}
+.heading-two {
+    font-size: clamp(1.5rem, 1vw + 1.25rem, 2rem);
+    @apply font-bold tracking-[-0.48px] leading-[1.2] text-ghost-white;
+}
+.heading-three {
+    @apply text-[24px] font-bold leading-[1.4] text-ghost-white;
+}
+.heading-four {
+    @apply text-base font-bold leading-[1.4] text-ghost-white;
+}
+p {
+    @apply text-sm md:text-base leading-normal font-normal text-ghost-white;
+}
+
+.btn-purple {
+    @apply px-6 py-3 bg-purple rounded-[20px] justify-center items-center inline-flex text-base font-bold leading-none text-ghost-white transition-all duration-300 ease-in-out relative overflow-hidden z-10;
+    &::before {
+        @apply absolute inset-0  content-[''] w-full h-full opacity-0 transition-opacity duration-300 ease-in-out z-0;         
+        background-image: linear-gradient(90deg, #46E9C9 -4.47%, #2EB7F3 33.7%, #8A4FFF 103.42%);
+        transition: opacity 0.3s ease-in-out;
+        z-index: -1;
+        
+    }
+    &:hover::before {
+        @apply opacity-100;
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "name": "acf/questions",
+    "title": "Questions",
+    "description": "A custom questions block that uses ACF fields.",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["questions"],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "questions.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

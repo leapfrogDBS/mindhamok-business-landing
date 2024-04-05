@@ -1,0 +1,15 @@
+{
+    "name": "acf/archive-case-studies",
+    "title": "Archive Case Studies",
+    "description": "A custom achive case-studies block that uses ACF fields.",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["archive case-studies"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "archive-case-studies.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

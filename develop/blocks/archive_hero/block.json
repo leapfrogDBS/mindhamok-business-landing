@@ -1,0 +1,15 @@
+{
+    "name": "acf/archive-hero",
+    "title": "Archive Hero",
+    "description": "A custom archive hero block that uses ACF fields.",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["hero"],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "archive-hero.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

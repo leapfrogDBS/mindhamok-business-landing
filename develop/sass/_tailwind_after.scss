@@ -1,0 +1,270 @@
+
+
+
+/* Menu Change colour on scroll */
+#masthead {
+    #gradient-background {
+        @apply transition-opacity duration-500 ease-in-out;
+    }
+    #demo-button:hover {
+        @apply bg-none bg-white;
+        #demo-text {
+            @apply bg-buttonGradient text-transparent;
+        }
+    }
+    #student-toggle {
+        @apply transition-all duration-500 ease-in-out;
+        &:hover {
+            @apply text-turquoise;
+        }
+    }
+    &.scrolled {
+        #gradient-background {
+            @apply opacity-100;
+        }
+        #demo-button {
+            @apply bg-none bg-white;
+            #demo-text {
+                @apply bg-buttonGradient text-transparent;
+            }
+            &:hover {
+                @apply bg-navGradient;
+                #demo-text {
+                    @apply bg-none text-white;
+                }
+            }
+        }
+        #student-toggle {
+            @apply text-white;
+            &:hover {
+                @apply text-turquoise;
+            }
+        }
+    }
+}
+
+/* Logo change on scroll */
+#white-logo {
+    @apply hidden;
+}
+
+.scrolled {
+    #white-logo {
+        @apply block;
+    }
+    #gradient-logo {
+        @apply hidden;
+    }
+}
+
+/* Menu */
+.main-navigation {
+    a {
+        @apply transition-all duration-500 ease-in-out;
+    }
+    a:hover, .current-menu-item a {
+        @apply text-turquoise;
+    }
+}
+
+/* Hamburger */
+#hamburger {
+    svg {
+        path {
+            @apply transition-all duration-500 ease-in-out;
+        }
+        #top-line {
+            
+            @apply origin-top;
+        }
+        #bottom-line {
+            
+            @apply origin-left;
+        }
+    }
+    &.toggle {
+        #top-line {
+            transform: rotate(45deg) translate(7px, -1px);
+        }
+
+        #bottom-line {
+            transform: rotate(-45deg);
+        }
+
+        #middle-line {
+           @apply opacity-0;
+        }
+    }
+}
+
+/* Highlight words in contnet */
+.highlight {
+   @apply text-blue-jeans bg-transparent;
+ 
+}
+
+/* Accordion Styles */
+
+
+.accordion {
+    @apply opacity-0 overflow-hidden max-h-0;
+    &.active  {
+        max-height: 1000px; 
+        @apply xl:my-14 opacity-100 transition-all duration-1000 ease-in-out;
+    }
+    .accordion-item {
+        &:last-child .gradient-border-line {
+            @apply hidden;
+        }
+        .accordion-title.active .chevron {
+            @apply rotate-180;
+        }
+        .accordion-content {
+            @apply max-h-0 overflow-hidden transition-all duration-300 ease-out;
+        }
+        .accordion-transition, #toggle-heading {
+            @apply transition-opacity duration-500 ease-out opacity-100;
+        }
+        .accordion-invisible {
+            @apply opacity-0 hidden transition-opacity duration-1000 ease-out;
+        }
+        #content-toggle:checked + .block {
+            @apply bg-blue-jeans;
+        }
+    }
+}
+
+
+
+
+
+
+/* Splide Pagination */ 
+.custom-pagination {
+    @apply flex gap-2 items-end justify-center;     
+}
+.pagination-line {
+    @apply bg-white h-1 border-none cursor-pointer w-10 rounded-full;  
+}
+.pagination-line.is-active {
+   @apply bg-counterGradient;
+}
+.splide {
+    @apply relative;
+}
+
+
+/* Position arrows absolutely within the slider container */
+.splide__arrows {
+    @apply absolute top-1/2 left-0 right-0 transform -translate-y-1/2 flex justify-between;
+}
+
+/* Adjust the individual arrow positions as needed */
+.splide__arrow {
+    @apply z-10;
+    opacity: 1 !important;
+    background: transparent !important;
+    svg {
+        height: 24px !important;
+        width: 24px !important;
+        fill: #fff !important;
+    }
+}
+.splide__arrow--prev {
+   left: -1.5em !important;
+}
+
+.splide__arrow--next {
+    right: -1.5em !important;
+}
+
+
+.post-item {
+    @apply hidden opacity-0 transition-opacity duration-300 ease-out;
+}
+
+.post-item.visible {
+    @apply flex opacity-100;
+}
+    
+
+/* Fancybox popup styling */
+.fancybox__backdrop {
+    background-color: #242140 !important;
+    opacity: 0.9 !important;
+}
+.fancybox__content {
+    padding: 0 !important;
+}
+.fancybox__slide {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+#popup {
+    form {
+        @apply flex flex-col gap-4 w-full;
+        .two-col {
+            @apply flex flex-col lg:flex-row gap-4;
+        }
+        input, textarea {
+            @apply w-full py-2 px-4 text-space-cadet leading-none text-[16px] rounded-md;
+        }
+        input::placeholder, textarea::placeholder {
+            @apply text-space-cadet;
+        }
+        input[type="submit"] {
+            @apply w-auto btn-purple;
+        }
+    }
+}
+
+
+/* Case Study Gallery */ 
+.splide__pagination__page {
+    height: 8px !important;
+    width: 8px !important;
+    background: #fff !important;
+    opacity: 1 !important;
+    &.is-active {
+        background-color: #45E8C9 !important;
+        transform: scale(1) !important;
+        
+    }
+}
+
+
+/* wysiwyg */
+.wysiwyg {
+    @apply space-y-6 lg:space-y-8;
+    h1 {
+        @apply heading-one;
+    }
+    h2 {
+        @apply heading-two;
+    }
+    h3 {
+        @apply heading-three;
+    }
+    h4 {
+        @apply heading-four;
+    }
+}
+
+/* Diable resize textaarea on cf7 */
+.wpcf7-form textarea {
+    resize: none;
+}
+.wpcf7-response-output {
+    border-color: #242140 !important;
+}
+
+/* Disable overscroll */
+html, body {
+    overscroll-behavior: none;
+  }
+
+/* Preloader */
+#preloader {
+    z-index: 9999;
+    @apply fixed inset-0 bg-space-cadet w-full h-full flex justify-center items-center;
+}
